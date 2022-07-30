@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-
+import { Link } from 'react-router-dom';
 function Popular() {
   //const api='c27a2f1043aa482bac3fdc5009bb1cc4'
 
@@ -50,9 +50,11 @@ function Popular() {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
+                  <Link to= {"/recipe/" + recipe.id }>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
                   <Gradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             )

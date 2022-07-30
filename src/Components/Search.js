@@ -1,59 +1,59 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react'
-import { FaSearch } from 'react-icons/fa'
+import {FaSearch} from "react-icons/fa"
 import { useNavigate } from 'react-router-dom'
 
-const Search = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+function Search(){
+    const [input,setInput] = useState("");
     const navigate = useNavigate();
   
     const submitHandler = (e) => {
       e.preventDefault();
-      navigate(`/searched/${searchTerm}`);
+      navigate("/searched/" +input);
     };
   
     return (
-      <Form onSubmit={submitHandler}>
+      <FormStyle  onSubmit={submitHandler}>
         <div>
-          <FaSearch />
+          <FaSearch/>
           <input
             type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
           />
         </div>
-      </Form>
+      </FormStyle>
     );
   };
   
-  const Form = styled.form`
-    margin: 0 2rem;
-    div {
-      position: relative;
+  const FormStyle = styled.form`
+
+    margin: 0 20rem;
+    position: relative;
+    width:100%
+    div{
       width: min(550px, 100%);
       margin: 0 auto;
     }
+     
+    
     input {
-      background: linear-grfunction Search() {
-        return (
-          <div>Search</div>
-        )
-      }adient(35deg, #494949, #313131);
-      font-size: 1.5rem;
-      color: #fff;
+      background:gray;
+      font-size: 0.8rem;
+      color: white;
       padding: 1rem 3rem;
-      border-radius: 0.5rem;
+      border-radius: 1rem;
       border: none;
       outline: none;
-      width: 100%;
+      
     }
     svg {
       position: absolute;
       left: 0;
       top: 50%;
       transform: translate(100%, -50%);
-      color: #fff;
+      color: white;
     }
   `;
   export default Search;

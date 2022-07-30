@@ -5,7 +5,9 @@ import Popular from "../Components/Popular";
 
 function Home() {
   return (
-    <div><Popular/>
+    <div>
+      
+        <Popular/>
     <Veggies /></div>
   )
 }
