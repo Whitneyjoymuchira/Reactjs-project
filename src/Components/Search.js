@@ -35,7 +35,11 @@ const Search = () => {
       margin: 0 auto;
     }
     input {
-      background: linear-gradient(35deg, #494949, #313131);
+      background: linear-grfunction Search() {
+        return (
+          <div>Search</div>
+        )
+      }adient(35deg, #494949, #313131);
       font-size: 1.5rem;
       color: #fff;
       padding: 1rem 3rem;
