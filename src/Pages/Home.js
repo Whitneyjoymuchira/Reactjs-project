@@ -1,9 +1,12 @@
 import React from "react";
 import Veggies from "../Components/Veggies";
+import Popular from "../Components/Popular";
 
 
-export default function Home() {
+function Home() {
   return (
-    <div></div>
+    <div><Popular/>
+    <Veggies /></div>
   )
 }
+export default Home;

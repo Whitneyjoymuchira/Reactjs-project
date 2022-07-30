@@ -1,4 +1,4 @@
-import {faPizzaSlice,faHamburger, FaPizzaSlice} from "react-icons/fa"
+import { FaPizzaSlice} from "react-icons/fa"
 import {GiNoodles,GiChopsticks ,GiHamburger} from "react-icons/gi"
 import styled from "styled-components"
 import React from 'react'
@@ -6,8 +6,8 @@ import { NavLink } from "react-router-dom"
 
 export default function Categories() {
   return (
-    <div>
-      <div>
+    <List>
+      <div >
         <FaPizzaSlice/>
         <h4>Italian</h4>
       </div>
@@ -15,14 +15,18 @@ export default function Categories() {
         <GiHamburger/>
         <h4>American</h4>
       </div>
-      <div>
+      <div >
         <GiNoodles/>
         <h4>Thai</h4>
       </div>
-      <div>
+      <div >
         <GiChopsticks/>
         <h4>Japanese</h4>
       </div>
-    </div>
+    </List>
   )
 }
+const List=styled.div`
+display:flex;
+justify-content:center;
+margin:2rem;`
