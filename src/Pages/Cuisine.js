@@ -24,8 +24,10 @@ useEffect(()=> {
           {cuisine.map((item)=>{
             return(
                 <Card key={item.id}>
-                    <img src={item.image} alt={item.title}/>
-                    <h4>{item.title}</h4>
+                    <img src={item.image} alt =""/>
+                    <h4>
+                        {item.title}
+                    </h4>
                 </Card>
             )
           }

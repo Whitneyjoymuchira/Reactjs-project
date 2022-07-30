@@ -1,5 +1,5 @@
 import React from "react";
-import Veggies from "../Components/Veggies";
+import Veggies from "../Components/Vegan";
 import Popular from "../Components/Popular";
 
 

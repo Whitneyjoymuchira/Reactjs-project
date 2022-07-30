@@ -4,7 +4,7 @@ import styled from "styled-components"
 import React from 'react'
 import { NavLink } from "react-router-dom"
 
-export default function Categories() {
+export default function Category() {
   return (
     <List>
       <SLink to= {'/cuisine/Italian'}>
@@ -35,6 +35,29 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-border-radius:50%;
-
-`
+margin-right: 2rem;
+border-radius: 50%;
+text-decoration: none;
+width: 6rem;
+height: 6rem;
+background: linear-gradient(35deg, #494949, #313131);
+cursor: pointer;
+transform: scale(0.8);
+h4 {
+  color: #fff;
+  font-size: 0.8rem;
+}
+svg {
+  color: #fff;
+  font-size: 1.5rem;
+}
+&.active {
+  background: linear-gradient(to right, #f27121, #e94057);
+  svg {
+    color: #fff;
+  }
+  h4 {
+    color: #fff;
+  }
+}
+`;
