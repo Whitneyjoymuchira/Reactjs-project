@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useState,useEffect } from 'react';
+//api=f1379539001f4bdcb1d2c610015bde00
 
 export default function Vegan() {
   const [vegan, setVegan] = useState([])
@@ -23,7 +24,7 @@ export default function Vegan() {
 
     
 
-    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=c27a2f1043aa482bac3fdc5009bb1cc4&number=12 &tags=vegetarian`)
+    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=f1379539001f4bdcb1d2c610015bde00&number=12 &tags=vegetarian`)
     const data = await api.json()
     console.log(data)
     localStorage.setItem("vegan", JSON.stringify(data.recipes))

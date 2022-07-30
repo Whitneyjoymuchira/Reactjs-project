@@ -24,7 +24,7 @@ function Popular() {
 
     
 
-    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=c27a2f1043aa482bac3fdc5009bb1cc4&number=12`)
+    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=f1379539001f4bdcb1d2c610015bde00&number=12`)
     const data = await api.json()
     console.log(data)
     localStorage.setItem("popular", JSON.stringify(data.recipes))
