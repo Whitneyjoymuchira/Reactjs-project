@@ -1,31 +1,28 @@
+
+import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Recipe = () => {
-  const [details, setDetails] = useState({});
-  const [activeTab, setActiveTab] = useState("instructions");
+function Recipe(){
+let params=useParams();
+const [details,setDetails]=useState({})
 
-  const params = useParams();
+const[activeTab,setActiveTab]=useState('instructions')
+
 
   const fetchDetails = async () => {
-    const resp = await fetch(
-      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=f1379539001f4bdcb1d2c610015bde00`
-    );
-    const data = await resp.json();
-    return data;
+    const data = await fetch(
+      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=f1379539001f4bdcb1d2c610015bde00`
+    )
+    const detailData=await data.json();
+    setDetails(detailData)
+    
   };
-
-  useEffect(() => {
-    let isMounted = true;
-
-    fetchDetails().then((data) => {
-      if (isMounted) setDetails(data);
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, [params.id]);
+  useEffect(()=>{
+    fetchDetails()
+  },[params.name]);
 
   return (
     <Wrapper>
@@ -35,7 +32,7 @@ const Recipe = () => {
       </div>
       <Info>
         <Button
-          className={activeTab === "ingredients" ? "active" : ""}
+           className={activeTab === "ingredients" ? "active" : ""}
           onClick={() => setActiveTab("ingredients")}
         >
           Ingredients
@@ -46,34 +43,38 @@ const Recipe = () => {
         >
           Instructions
         </Button>
-        {activeTab === "ingredients" && (
-          <ul>
-            {details.extendedIngredients.map(({ id, original }) => (
-              <li key={id}>{original}</li>
-            ))}
-          </ul>
-        )}
-
-        {activeTab === "instructions" && (
+        {activeTab ==='instructions' &&(
           <div>
-            <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+            <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
             <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
           </div>
         )}
+
+        {activeTab === 'ingredients'  && (
+          <ul>
+{details.extendedIngredients.map((ingredient)=>(
+  <li key={ingredient.id}>{ingredient.original}
+
+  </li>
+))}
+          </ul>
+        )}
+          
       </Info>
     </Wrapper>
   );
-};
+        }
 
 const Wrapper = styled.div`
-  margin: 10rem inherit 5rem;
+  margin-top: 10rem;
+  margin-bottom:5rem;
   display: flex;
   @media (max-width: 1068px) {
     flex-direction: column;
   }
   .active {
     background: linear-gradient(35deg, #494949, #313131);
-    color: #fff;
+    color: white;
   }
   h2 {
     margin-bottom: 2rem;
@@ -98,8 +99,8 @@ const Wrapper = styled.div`
 const Button = styled.button`
   padding: 1rem 2rem;
   color: #313131;
-  background: #fff;
-  border: 2px solid #000;
+  background: white;
+  border: 2px solid black;
   margin-right: 2rem;
   font-weight: 600;
 `;
