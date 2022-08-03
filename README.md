@@ -1,3 +1,7 @@
+Live netlify link 
+
+https://62eabd6cde7db1008bb079fe--aesthetic-sundae-285111.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
