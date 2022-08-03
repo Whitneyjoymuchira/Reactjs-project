@@ -1,7 +1,6 @@
 import React from 'react'
 import Home from './Home'
 import Popular from '../Components/Popular'
-import Vegan from '../Components/Vegan'
 import { Route,Routes, } from 'react-router-dom'
 import Cuisines from './Cuisine'
 import Searched from './Searched'
