@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Home.css";
+import "./Pages/Home.css";
 export default function LandingPage() {
   let nav = useNavigate();
   const routeChange = () => {
@@ -21,7 +21,7 @@ export default function LandingPage() {
       </div>
       <div className="landing-page-image">
         <img
-          src={process.env.PUBLIC_URL + "/assets/images/landing.svg"}
+          src="/home/whitney/Development/code/phase-2/project/src/Pages/cooking.svg"
           alt="recipe"
         />
       </div>

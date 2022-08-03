@@ -1,5 +1,5 @@
-import "./CreateRecipe.css";
-export default function CreateRecipe() {
+import "/home/whitney/Development/code/phase-2/project/src/recipe.css"
+export default function Addrecipe() {
   //post request to create a new recipe
 //   let nav = useNavigate();
 //   const routeChange = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Recipes.css";
+import "/home/whitney/Development/code/phase-2/project/src/Pages/meals.css";
 
 const Recipes = ({ recipe }) => {
   return (

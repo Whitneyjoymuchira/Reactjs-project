@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Recipes from "./Recipes";
-
-export default function RecipeItem() {
+import "./Recipes.js"
+import React from "react";
+import Recipes from "./Recipes.js";
+export default function Recipeitems() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
 
